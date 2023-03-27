@@ -51,8 +51,9 @@ console.log(quotes);
 /***
  * `getRandomQuote` function
 ***/
+let quotesLength = quotes.length;
 function getRandomQuote () {
-  let randomQuote = Math.floor(Math.random() * Object.keys(quotes).length);
+  let randomQuote = Math.floor(Math.random() * quotesLength);
   return randomQuote;
 };
 console.log(randomQuote);
@@ -60,16 +61,16 @@ console.log(randomQuote);
 /***
  * `printQuote` function
 ***/
-function printQuote () {
-  for(let i = 0; i; i++) {
-    let quotation = quotes[getRandomQuote];
-    quotation += `
-      <p>${quotation.quote}</p>
-      <p>${quotation.source}</p>
-      <span>${quotation.citation}</span>
-      <span>${quotation.year}</span>
-    `}
-}
+// function printQuote () {
+//   for(let i = 0; i; i++) {
+//     let quotation = quotes(randomQuote);
+//     quotation += `
+//       <p>${quotation.quote}</p>
+//       <p>${quotation.source}</p>
+//       <span>${quotation.citation}</span>
+//       <span>${quotation.year}</span>
+//     `}
+// }
 
 
 /***
