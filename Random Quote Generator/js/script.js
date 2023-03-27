@@ -55,8 +55,9 @@ let quotesLength = quotes.length;
 function getRandomQuote () {
   let randomQuote = Math.floor(Math.random() * quotesLength);
   return randomQuote;
+  console.log(randomQuote);
 };
-console.log(randomQuote);
+
 
 /***
  * `printQuote` function
