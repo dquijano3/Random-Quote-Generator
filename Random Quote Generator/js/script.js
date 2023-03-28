@@ -51,27 +51,25 @@ console.log(quotes);
 /***
  * `getRandomQuote` function
 ***/
-let quotesLength = quotes.length;
 function getRandomQuote () {
-  let randomQuote = Math.floor(Math.random() * quotesLength);
+  const randomQuote = Math.floor(Math.random() * quotes.length); //just using the length to keep everything adaptable
   return randomQuote;
-  console.log(randomQuote);
 };
-
-
+console.log(getRandomQuote()); //this was causing me trouble (proper varification of getRandomQuote)
 /***
  * `printQuote` function
 ***/
-// function printQuote () {
-//   for(let i = 0; i; i++) {
-//     let quotation = quotes(randomQuote);
-//     quotation += `
-//       <p>${quotation.quote}</p>
-//       <p>${quotation.source}</p>
-//       <span>${quotation.citation}</span>
-//       <span>${quotation.year}</span>
-//     `}
-// }
+function printQuote() {
+  let quotesObject = quotes[getRandomQuote()];
+  // while counter = () =>
+  quoting =`
+    <p class= "quote">${quotesObject.quote}</p>
+    <p class= "source">${quotesObject.source}</p>
+      <span class= "citation">${quotesObject.citation}</span>
+      <span class= "year">${quotesObject.year}</span>    
+    `
+  document.getElementById('quote-box').innerHTML = quoting; 
+}
 
 
 /***
