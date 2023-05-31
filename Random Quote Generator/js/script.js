@@ -67,7 +67,7 @@ function generateRandomColor() {
  * `printQuote` function
 ***/
 function printQuote() {
-  const quoteElement = document.getElementById("quote");
+  const quoteElement = document.getElementById("quote-box");
   const bodyElement = document.body;
   
   const randomQuote = getRandomQuote();
