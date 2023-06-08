@@ -18,31 +18,31 @@ const quotes = [
   // tags: ""}
   // 'Quotation Template'
   {quote: "Try not. Do or do not. There is no try.",
-   source: "-Yoda, Jedi Master,",
-   citation: "Star Wars Episode V: The Empire Strikes Back,",
+   source: "Yoda, Jedi Master",
+   citation: "Star Wars Episode V: The Empire Strikes Back",
    year: "", },
    {quote: "Inspiration is a guest that does not willingly visit the lazy.",
-   source: "-Tchaikovsky, Russian Composer,",
-   citation: "Pyotr Ilyich Tchaikovsky,",
+   source: "Tchaikovsky, Russian Composer",
+   citation: "Pyotr Ilyich Tchaikovsky",
    year: "1840 - 1893", },
   {quote: "Any law which violates the inalienable rights of man is essentially unjust and tyrannical; it is not a law at all.",
-   source: "-Maximilien Robespierre,",
+   source: "Maximilien Robespierre",
    citation: "Declaration des droits de l'homme,",
    year: "Aprilr 24, 1793", },
   {quote: "Not all those who wander are lost.",
-   source: "-Bilbo Baggins,",
-   citation: "-The Hobbit,",
+   source: "Bilbo Baggins",
+   citation: "-The Hobbit",
    year: " ", },
   {quote: "Deeds will not be less valiant because they are unpraised.",
-   source: "-Aragorn",
+   source: "Aragorn",
    citation: "The Lord of the Rings",
    year: " ", },
   {quote: "You step into the road, and if you don't keep your feet, there is no knowing where you might be swept off to.",
-  source: "-Bilbo Baggins,",
+  source: "Bilbo Baggins",
   citation: "The Lord of the Rings",
   year: " ",},
   {quote: "Sometimes we must let go of our pride and do what is requested of us.",
-  source: "-Anakin Skywalker,",
+  source: "Anakin Skywalker",
   citation: "Star Wars Episode II: Attack of The Clones",
   year: "",},
 ]
@@ -54,7 +54,15 @@ const quotes = [
 function getRandomQuote () {
   const randomQuote = Math.floor(Math.random() * quotes.length); //just using the length to keep everything adaptable
   return quotes [randomQuote];
+  while (randomQuote === previousQuote) {
+    randomIndex = Math.floor(Math.random() * quotes.length);
+    randomQuote = quotes[randomIndex];
+  }
+
+  previousQuote = randomQuote;
+  return randomQuote;
 };
+
 function generateRandomColor() {
   const letters = "0123456789ABCDEF";
   let color = "#";
@@ -82,7 +90,9 @@ function printQuote() {
   
   bodyElement.style.backgroundColor = randomColor;
 }
-
+setInterval(() => {
+  printQuote();
+}, 10000);
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
